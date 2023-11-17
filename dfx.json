@@ -1,0 +1,34 @@
+{
+  "canisters": {
+    "backend": {
+      "type": "motoko",
+      "main": "backend/Backend.mo"
+
+    },
+    "voters":{
+      "type": "motoko",
+      "main": "backend/Voter/Register.mo"
+    },
+
+    "TeamParty":{
+      "type": "motoko",
+      "main": "backend/Team/TeamParty.mo"
+    },
+    "Delegate":{
+      "type": "motoko",
+      "main": "backend/Team/Delegate.mo"
+    },
+    "frontend": {
+      "dependencies": ["backend"],
+      "type": "assets",
+      "source": ["dist/"]
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "npm run --silent sources"
+    }
+  },
+  "output_env_file": ".env",
+  "version": 2
+}
